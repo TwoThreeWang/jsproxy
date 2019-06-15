@@ -59,21 +59,15 @@ su - jsproxy
 
 # 查看代理日志
 tail server/nginx/logs/proxy.log
-```
 
 # 开机自启动
 1、切换到 root 用户
-`su - root`
-2、编辑文件
-```
+su - root
+2、打开文件
 vi /etc/rc.local
-```
-3、添加自启动键本
-在 rc.local 文件中添加以下内容
-```
+3、在 rc.local 文件中添加以下内容
 su - jsproxy -c "bash /home/jsproxy/server/run.sh"
 ```
-
 # 禁止外链
 
 默认情况下，代理接口允许所有 `github.io` 子站点调用，这可能导致不必要的流量消耗。
