@@ -61,8 +61,18 @@ su - jsproxy
 tail server/nginx/logs/proxy.log
 ```
 
-目前暂未实现开机自启动。
-
+# 开机自启动
+1、切换到 root 用户
+`su - root`
+2、编辑文件
+```
+vi /etc/rc.local
+```
+3、添加自启动键本
+在 rc.local 文件中添加以下内容
+```
+su - jsproxy -c "bash /home/jsproxy/server/run.sh"
+```
 
 # 禁止外链
 
